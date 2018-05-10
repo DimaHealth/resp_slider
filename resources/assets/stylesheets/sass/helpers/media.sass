@@ -1,0 +1,70 @@
+=media($resolution)
+  @media screen and (max-width: $resolution)
+    @content
+
+=media-landscape()
+  @media screen and  (max-width: 768px) and (orientation : landscape)
+    @content
+
+=media-portrait()
+  @media screen and  (max-width: 768px) and (orientation : portrait)
+    @content
+
+/* Your CSS here */
+
+=max-woh($width, $height)
+  @media screen and (max-width: #{$width}px), (max-height: #{$height}px)
+    @content
+
+=min-w($width)
+  @media screen and (min-width: #{$width}px)
+    @content
+
+=max-w($width)
+  @media screen and (max-width: #{$width}px)
+    @content
+
+=max-h($height)
+  @media screen and (max-height: #{$height}px)
+    @content
+
+=min-h($height)
+  @media screen and (min-height: #{$height}px)
+    @content
+
+=media-1023
+  @media screen and (max-width: 1023px)
+    @content
+
+=tablet
+  @media only screen and (max-width: 992px)
+    @content
+
+=desktop
+  @media only screen and (min-width: 993px)
+    @content
+
+=mobile-lg
+  @media only screen and (max-width: 768px)
+    @content
+
+=mobile-md
+  @media only screen and (max-width: 640px)
+    @content
+
+=mobile-sm
+  @media only screen and (max-width: 480px)
+    @content
+
+=mobile-lg-v
+  @media only screen and (max-height: 768px)
+    @content
+
+=mobile-md-v
+  @media only screen and (max-height: 600px)
+    @content
+
+=mobile-sm-v
+  @media only screen and (max-height: 430px)
+    @content
+

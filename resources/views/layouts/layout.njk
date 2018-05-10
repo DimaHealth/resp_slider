@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Project</title>
+
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+
+    <link rel="shortcut icon" href="${require('assets/images/favicon/favicon.ico')}" type="image/x-icon">
+    <link rel="apple-touch-icon" href="${require('assets/images/favicon/apple-touch-icon.png')}" type="image/png">
+
+    {#<link rel="stylesheet" href="css/app.css?{{ hash }}">#}
+</head>
+<body>
+<style type="text/css">
+    .preload__icon {
+        display: block;
+        position: fixed;
+        z-index: 99999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        min-width: 1000px;
+        background: #95c1dd url("/assets/images/preload.gif")  center center no-repeat;
+        background-size: 85px;
+    }
+</style>
+<div class="preload">
+    <div class="preload__icon"></div>
+</div>
+<script type="text/javascript">
+
+
+    window.onload = function () {
+        var preloader = $(".preload__icon");
+            preloader.fadeOut();
+    };
+
+</script>
+{#{% include "shared/_header.njk" %}#}
+<main>
+    {% block content %}{% endblock %}
+</main>
+{#{% include "shared/_footer.njk" %}#}
+<script src="js/app.js?{{ hash }}"></script>
+</body>
+</html>

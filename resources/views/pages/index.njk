@@ -1,0 +1,104 @@
+{% extends "layouts/layout.njk" %}
+
+{% block content %}
+{% set subsection = [
+
+        {
+            "id": "sunsung",
+            "link": "",
+            "caption": "Mobile (Samsung S7 Edge)",
+            "text":"firefox_mobile"
+        },
+        {
+            "id" : "Tablet",
+            "link": "",
+            "caption": "Tablet (Surface Pro)",
+            "text":"firefox_tablet"
+
+        },
+        {
+            "id" : "Desktop",
+            "link": "",
+            "caption": "Desktop (Windows 10)",
+            "text":"firefox_desktop"
+        },
+        {
+            "id" : "OnePlus",
+            "link": "",
+            "caption": "Смартфон: OnePlus One, 5.5 дюймов IPS экран: 1920*1080",
+            "text":"Великолепные и четкие чтения, vedio смотреть и играть игровой дисплей"
+        },
+        {
+            "id" : "OnePlusOne",
+            "link": "",
+            "caption": "Смартфон: OnePlus One,Большой объем памяти 3 ГБ + 16 ГБ/64 ГБ",
+            "text":"Поддержка дополнительной TF карты до 32 ГБ "
+        },
+        {
+
+            "id" : "Android",
+            "link": "",
+            "caption": "Смартфон: OnePlus One,Android 4.4",
+            "text":"Дружелюбный, простой и полезный опыт пользователя "
+        },
+        {
+            "id": "OnePlus2",
+            "link": "",
+            "caption": "Смартфон: OnePlus One,Верхняя камера 5 + 13 Мп с двумя фонариками",
+            "text":"Записывайте свою жизнь самым красивым способом "
+        },
+        {
+            "id": "OnePlus3",
+            "link": "",
+            "caption": "Смартфон: OnePlus One,Емкость батареи 3100 мАч",
+            "text":"Высший уровень в мобильных аккумуляторах, дольше времени как в режиме ожидания, так и в использовании "
+        },
+        {
+            "link": "Android"
+        },
+        {
+            "link": "sunsung"
+        },
+        {
+            "link": "Desktop"
+        },
+        {
+            "link": "OnePlus"
+        },
+        {
+            "link": "OnePlusOne"
+        },
+        {
+            "link": "OnePlus2"
+        },
+        {
+            "link": "OnePlus3"
+        }
+    ]
+%}
+
+    <div class="content">
+        <div class="resp-slider swiper-container js-slider">
+            <div class="resp-slider__wrap swiper-wrapper">
+            {% for i in range(0, 15) %}
+                <div style="background-image: url(${require('assets/images/slider/slide{{ i }}.jpg')})" class="resp-slider__item js-slider-item swiper-slide" >
+                    <div id="{{ subsection[i].id }}" data-link="{{ subsection[i].link }}" data-caption='{{ subsection[i].caption  }}' data-text='{{ subsection[i].text }}'  class="resp-slider__link js-popup-show">
+                        подробнее
+                    </div>
+
+                </div>
+
+
+            {% endfor %}
+            </div>
+            <div class="swiper-button-prev js-btn-prev"></div>
+            <div class="swiper-button-next js-btn-next"></div>
+        </div>
+    </div>
+    {#<!-- EXAMPLE REQUIRE IMG -->#}
+    {#<img src="assets/images/square.png" alt="">#}
+    {#<div style="background-image: url(${require('assets/images/square3.png')}); height: 100px"></div>#}
+
+
+
+{% endblock %}
